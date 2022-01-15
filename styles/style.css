@@ -114,7 +114,6 @@ main section .imgBox {
     align-items: center;
     transition: transform;
     border-radius: 60%;
-    background-image: linear-gradient(#D6004D, #ED1850, transparent, transparent);
     transition: 0.2s;
 }
 
@@ -153,7 +152,10 @@ main section#about .imgBox {
 main section#about .imgBox img {
     width: 300px;
     position: relative;
-    left: 16px
+}
+
+main section#about .imgBox img:hover {
+    filter: invert(1);
 }
 
 main section#about .textBox p {
