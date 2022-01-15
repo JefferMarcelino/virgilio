@@ -67,8 +67,8 @@ header nav ul li a:hover {
 
 main section {
     position: relative;
-    margin-top: 70px;
-    padding: 0 100px;
+    padding: 100px;
+    padding-top: 200px;
     height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -92,9 +92,6 @@ main section#home .textBox h1 span {
     font-variant: small-caps;
     font-size: 3em;
     transition: 0.5s;
-}
-
-main section#home .textBox h1 span:hover {
 }
 
 main section .textBox p {
@@ -154,7 +151,7 @@ main section#about .imgBox {
 }
 
 main section#about .imgBox img {
-    width: 150px;
+    width: 300px;
     position: relative;
     left: 16px
 }
