@@ -21,14 +21,14 @@
 }
 
 body {
-    background-color: #360745;
+    background: linear-gradient(to right, #360745, #40005C, #360452);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px 20px 100px;
+    padding: 30px 100px 10px 100px;
 }
  
 header img {
@@ -52,6 +52,7 @@ header nav ul li a {
 }
 
 main section {
+    margin-bottom: 100px;
     padding: 0 100px;
     display: flex;
     justify-content: space-between;
@@ -62,14 +63,14 @@ main section .textBox {
     max-width: 700px;
 }
 
-main section .textBox h1 {
+main section#home .textBox h1 {
     font-family: "Poppins bold";
     text-transform: uppercase;
     font-size: 1.8em;
     color: #ED1850;
 }
 
-main section .textBox h1 span {
+main section#home .textBox h1 span {
     color: #fff;
     text-transform: none;
     font-size: 2.2em;
@@ -92,16 +93,35 @@ main section .imgBox {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
+    transition: transform;
 }
 
-main section .imgBox p {
+main section#home .imgBox p {
     color: #fff;
     font-size: 1.3em;
     font-family: "Poppins semibold";
 
 }
 
-main section .imgBox img {
+main section#home .imgBox p:hover {
+    color: #ED1850;
+}
+
+main section#home .imgBox img {
     width: 300px;
     border-radius: 200px;
+}
+
+main section#about {
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+main section#about .imgBox img {
+    width: 150px;
+}
+
+main section#about .textBox p {
+    color: #ffff;
 }
