@@ -18,6 +18,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins regular", sans-serif;
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -152,10 +154,6 @@ main section#about .imgBox {
 main section#about .imgBox img {
     width: 300px;
     position: relative;
-}
-
-main section#about .imgBox img:hover {
-    filter: invert(1);
 }
 
 main section#about .textBox p {
