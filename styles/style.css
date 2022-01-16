@@ -48,6 +48,7 @@
 /* CONFIGURAÇÃO DO CORPO DA PAGINA */
 body {
     background-image: linear-gradient(var(--cor-de-fundo));
+    overflow-x: hidden;
 }
 
 
@@ -122,6 +123,9 @@ header nav ul li a:hover {
     color: var(--cor-link-hover);
 }
 
+#header.scroll {
+    border-bottom: 1px solid white;
+}
 
 /* CONFIGURAÇÃO PADRÃO DAS SECÇÕES */
 main section {
@@ -250,29 +254,56 @@ main section#services nav ul li {
     font-size: var(--tamanho-padrao);
     margin-left: 30px;
     list-style: none;
-}
-
-main section#services nav ul li a {
-    text-decoration: none;
     padding: 7px;
     margin-bottom: 20px;
     color: var(--cor-padrao-de-letra);
     border-radius: 30px;
+    transition: 0.2s;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-main section#services nav ul li a:hover {
+main section#services nav ul li:hover,
+main section#services nav ul li.active {
     background-color: var(--cor-padrao-de-letra);
     color: var(--cor-link-hover);
 }
 
-main section#services .cartazes img{
+main section#services img{
     width: 50%;
     object-fit: cover;
-    margin-right: 0.5rem;
+}
+
+main section#services #cartoes.hide {
+    display: none;
+}
+
+main section#services #cartazes.hide {
+    display: none;
+}
+
+main section#services #cartoons.hide {
+    display: none;
+}
+
+main section#services #logomarca.hide {
+    display: none;
 }
 
 /* SWIPER */
 .swiper-container {
-    width: 70vw;
+    width: 80vw;
+    height: auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+    width: 25%;
+    padding-bottom: 3em;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
 }
