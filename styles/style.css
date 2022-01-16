@@ -226,3 +226,53 @@ main section#about .imgBox img {
 main section#about .textBox p {
     animation-name: MoveToLeft;
 }
+
+/* CONFIGURAÇÃO DA SECÇÃO SERVICES */
+main section#services nav {
+    margin-bottom: 50px;
+}
+
+main section#services {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section#services nav ul {
+    display: flex;
+    animation-name: MoveToLeft;
+    animation-duration: 0.3s;
+}
+
+main section#services nav ul li {
+    display: inline-block;
+    font-size: var(--tamanho-padrao);
+    margin-left: 30px;
+    list-style: none;
+}
+
+main section#services nav ul li a {
+    text-decoration: none;
+    padding: 7px;
+    margin-bottom: 20px;
+    color: var(--cor-padrao-de-letra);
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+main section#services nav ul li a:hover {
+    background-color: var(--cor-padrao-de-letra);
+    color: var(--cor-link-hover);
+}
+
+main section#services .cartazes img{
+    width: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+/* SWIPER */
+.swiper-container {
+    width: 70vw;
+}
