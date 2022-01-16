@@ -1,3 +1,4 @@
+/* IMPORTANDO FONTES LOCAIS */
 @font-face {
     font-family: 'Poppins regular';
     src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
@@ -13,43 +14,97 @@
     src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
+
+/* RESET DAS CONFIGURAÇÕES*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins regular", sans-serif;
+    font-family: var(--fonte-padrao);
     scroll-behavior: smooth;
-
 }
 
+
+/* VARIAVEIS */
+:root {
+    /* FONTS */
+    --fonte-padrao: "Poppins regular", sans-serif;
+    --fonte-semibold: "Poppins semibold", sans-serif;
+    --fonte-bold: "Poppins bold", sans-serif;
+    --tamanho-padrao: 1em;
+    --tamanho-de-paragrafo: 1.2em;
+    --tamanho-padrao-titulo: 1.8em;
+    --tamanho-titulo-grande: 3em;
+
+    /* CORES */
+    --cor-de-fundo: to right, #360745, #40005C, #360452;
+    --cor-link-hover: #360452;
+    --cor-titulo-h1-home: #ED1850;
+    --cor-padrao-de-letra: #ffff;
+    --divisor-1: 90deg, #F70C20, #D6004D, transparent; 
+}
+
+
+/* CONFIGURAÇÃO DO CORPO DA PAGINA */
 body {
-    background: linear-gradient(to right, #360745, #40005C, #360452);
+    background-image: linear-gradient(var(--cor-de-fundo));
 }
 
+
+/* ANIMAÇÕES */
+@keyframes MoveToRight {
+    from {
+        transform: translateX(-15%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes MoveToLeft {
+    from {
+        transform: translateX(15%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+/* CONFIGURAÇÃO DO CABEÇALHO */
 header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     z-index: 10000;
-    background: linear-gradient(to right, #360745, #40005C, #360452);
-    justify-content: space-between;
-    align-items: center;
+
+    width: 100vw;
     padding: 30px 100px 10px 100px;
+    background: linear-gradient(var(--cor-de-fundo));
 }
- 
+
 header img {
     width: 300px;
+    cursor: pointer;
+    animation-name: MoveToRight;
+    animation-duration: 0.5s;
 }
 
 header nav ul {
     display: flex;
+    animation-name: MoveToLeft;
+    animation-duration: 0.3s;
 }
 
 header nav ul li {
     display: inline-block;
-    font-size: 1.2em;
+    font-size: var(--tamanho-padrao);
     margin-left: 30px;
     list-style: none;
 }
@@ -57,105 +112,116 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     padding: 7px;
-    color: #fff;
+    color: var(--cor-padrao-de-letra);
     border-radius: 30px;
     text-transform: uppercase;
 }
 
 header nav ul li a:hover {
-    background-color: #fff;
-    color: #360452;
+    background-color: var(--cor-padrao-de-letra);
+    color: var(--cor-link-hover);
 }
 
+
+/* CONFIGURAÇÃO PADRÃO DAS SECÇÕES */
 main section {
     position: relative;
     padding: 100px;
-    padding-top: 200px;
+    padding-top: 220px;
     height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: var(--tamanho-padrao);
+    color: var(--cor-padrao-de-letra);
+    text-align: left;
 }
 
 main section .textBox {
     max-width: 700px;
+    transition: 0.7s;
+    transition-property: transform;
+    
 }
 
-main section#home .textBox h1 {
-    font-family: "Poppins bold";
-    text-transform: uppercase;
-    font-size: 1.8em;
-    color: #ED1850;
-}
-
-main section#home .textBox h1 span {
-    color: #fff;
-    text-transform: none;
-    font-variant: small-caps;
-    font-size: 3em;
-    transition: 0.5s;
+main section .textBox h1 {
+    animation-name: MoveToRight;
+    animation-duration: 0.2s;
 }
 
 main section .textBox p {
-    color: #fff; 
-    font-family: "Poppins regular";
-    font-size: 1.2em;
-    text-align: left;
+    font-size: var(--tamanho-de-paragrafo);
+    animation-name: MoveToRight;
+    animation-duration: 0.5s;
 }
 
 main section .textBox p strong {
-    color: #fff; 
-    font-family: "Poppins bold";
+    color: var(--cor-padrao-de-letra); 
+    font-family: var(--fonte-bold);
 }
 
 main section .imgBox {
-    transform: scale(0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform;
-    border-radius: 60%;
-    transition: 0.2s;
+    border-radius: 60%;    
+}
+
+main section .imgBox img {
+    width: 250px;
+    animation-duration: 0.7s;
 }
 
 main section .imgBox:hover {
-    transform: scale(1);
+    transform: scale(1.1);
+}
+
+
+/* CONFIGURAÇÃO DA SECÇÃO HOME */
+main section#home .textBox h1 {
+    font-family: var(--fonte-bold);
+    text-transform: uppercase;
+    font-size: var(--tamanho-padrao-titulo);
+    color: var(--cor-titulo-h1-home); 
+}
+
+main section#home .textBox h1 span {
+    color: var(--cor-padrao-de-letra);
+    text-transform: none;
+    font-variant: small-caps;
+    font-size: var(--tamanho-titulo-grande);
 }
 
 main section#home .imgBox p {
-    color: #fff;
+    color: var(--cor-padrao-de-letra);
     font-size: 1.3em;
-    font-family: "Poppins semibold";
+    font-family: var(--fonte-semibold);
+    animation-name: MoveToLeft;
+    animation-duration: 0.3s;
+    animation-iteration-count: unset;
 
 }
 
 main section#home .imgBox img {
-    width: 300px;
     border-radius: 200px;
+    animation-name: MoveToLeft;
 }
 
+
+/* DIVISOR DAS SECÇÕES 1 */
 div.divider-1 {
     height: 1px;
-    background-image: linear-gradient(90deg, #F70C20, #D6004D, transparent);
+    background-image: linear-gradient(var(--divisor-1));
 }
 
-main section#about {
-    height: 100vh;
-    margin-bottom: 0;
-}
 
-main section#about .imgBox {
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-}
-
+/* CONFIGURAÇÃO DA SECÇÃO ABOUT */
 main section#about .imgBox img {
     width: 300px;
-    position: relative;
+    animation-name: MoveToRight;
 }
 
 main section#about .textBox p {
-    color: #ffff;
+    animation-name: MoveToLeft;
 }
