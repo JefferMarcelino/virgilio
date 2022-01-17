@@ -97,7 +97,7 @@ header img {
     animation-duration: 0.5s;
 }
 
-header nav ul {
+nav ul {
     display: flex;
     animation-name: MoveToLeft;
     animation-duration: 0.3s;
@@ -231,33 +231,25 @@ main section#about .textBox p {
     animation-name: MoveToLeft;
 }
 
+
 /* CONFIGURAÇÃO DA SECÇÃO SERVICES */
 main section#services nav {
-    margin-bottom: 50px;
-}
-
-main section#services {
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 25vw;
 }
 
 main section#services nav ul {
-    display: flex;
+    flex-direction: column;
     animation-name: MoveToLeft;
     animation-duration: 0.3s;
 }
 
 main section#services nav ul li {
-    display: inline-block;
     font-size: var(--tamanho-padrao);
-    margin-left: 30px;
     list-style: none;
     padding: 7px;
     margin-bottom: 20px;
     color: var(--cor-padrao-de-letra);
-    border-radius: 30px;
+    border-radius: 25px;
     transition: 0.2s;
     text-transform: uppercase;
     cursor: pointer;
@@ -270,29 +262,14 @@ main section#services nav ul li.active {
 }
 
 main section#services img{
-    width: 50%;
-    object-fit: cover;
-}
-
-main section#services #cartoes.hide {
-    display: none;
-}
-
-main section#services #cartazes.hide {
-    display: none;
-}
-
-main section#services #cartoons.hide {
-    display: none;
-}
-
-main section#services #logomarca.hide {
-    display: none;
+    width: 17vw;
+    transition: 0.2s;
+    transition-duration: transform;
 }
 
 /* SWIPER */
 .swiper-container {
-    width: 80vw;
+    width: 75vw;
     height: auto;
 }
 
@@ -301,6 +278,15 @@ main section#services #logomarca.hide {
     width: 25%;
     padding-bottom: 3em;
     align-items: center;
+}
+
+.swiper-slide {
+    opacity: 0.3;
+    width: 25vw;
+}
+
+.swiper-wrapper .swiper-slide-next {
+    opacity: 1;
 }
 
 .swiper-slide {
