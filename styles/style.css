@@ -24,6 +24,10 @@
     scroll-behavior: smooth;
 }
 
+i {
+    font-size: 6em;
+}
+
 
 /* VARIAVEIS */
 :root {
@@ -41,7 +45,8 @@
     --cor-link-hover: #360452;
     --cor-titulo-h1-home: #ED1850;
     --cor-padrao-de-letra: #ffff;
-    --divisor-1: 90deg, #F70C20, #D6004D, transparent; 
+    --divisor-1: 90deg, transparent, #D6004D, #F70C20; 
+    --divisor-2: 90deg, #F70C20, #D6004D, transparent; 
 }
 
 
@@ -70,6 +75,16 @@ body {
 
     to {
         transform: translateX(0%);
+    }
+}
+
+@keyframes textAnimation {
+    from {
+        color: #b83457;
+    }
+
+    to {
+        color: #ED1850;
     }
 }
 
@@ -188,7 +203,9 @@ main section#home .textBox h1 {
     font-family: var(--fonte-bold);
     text-transform: uppercase;
     font-size: var(--tamanho-padrao-titulo);
-    color: var(--cor-titulo-h1-home); 
+    color: var(--cor-titulo-h1-home);
+    text-shadow: 2px 2px 2px black;
+
 }
 
 main section#home .textBox h1 span {
@@ -196,6 +213,7 @@ main section#home .textBox h1 span {
     text-transform: none;
     font-variant: small-caps;
     font-size: var(--tamanho-titulo-grande);
+
 }
 
 main section#home .imgBox p {
@@ -220,6 +238,10 @@ div.divider-1 {
     background-image: linear-gradient(var(--divisor-1));
 }
 
+div.divider-2 {
+    height: 1px;
+    background-image: linear-gradient(var(--divisor-2));
+}
 
 /* CONFIGURAÇÃO DA SECÇÃO ABOUT */
 main section#about .imgBox img {
@@ -233,32 +255,19 @@ main section#about .textBox p {
 
 
 /* CONFIGURAÇÃO DA SECÇÃO SERVICES */
-main section#services nav {
-    width: 25vw;
-}
-
-main section#services nav ul {
+main section#services {
     flex-direction: column;
-    animation-name: MoveToLeft;
-    animation-duration: 0.3s;
+    padding-top: 150px;
 }
 
-main section#services nav ul li {
-    font-size: var(--tamanho-padrao);
-    list-style: none;
-    padding: 7px;
-    margin-bottom: 20px;
-    color: var(--cor-padrao-de-letra);
-    border-radius: 25px;
-    transition: 0.2s;
+main section#services p {
+    font-size: 1.3em;
     text-transform: uppercase;
-    cursor: pointer;
 }
 
-main section#services nav ul li:hover,
-main section#services nav ul li.active {
-    background-color: var(--cor-padrao-de-letra);
-    color: var(--cor-link-hover);
+main section#services p strong {
+    color: var(--cor-titulo-h1-home);
+    text-shadow: 2px 2px 2px black;
 }
 
 main section#services img{
@@ -267,29 +276,89 @@ main section#services img{
     transition-duration: transform;
 }
 
-/* SWIPER */
+
+/* SWIPER */  
 .swiper-container {
     width: 75vw;
     height: auto;
 }
 
 .swiper-wrapper {
-    display: flex;
     width: 25%;
     padding-bottom: 3em;
     align-items: center;
 }
 
 .swiper-slide {
-    opacity: 0.3;
+    opacity: 0.1;
+    transform: scale(0.8);
     width: 25vw;
+}
+
+.swiper-wrapper .swiper-slide-next,
+.swiper-wrapper .swiper-slide-next img {
+    transition: 0.2s;
 }
 
 .swiper-wrapper .swiper-slide-next {
     opacity: 1;
+    transform: scale(0.9);
 }
 
-.swiper-slide {
+.swiper-wrapper .swiper-slide-next:hover {
+    transform: scale(1);
+}
+
+main section#services .swiper-pagination-bullet-active {
+    background: var(--cor-titulo-h1-home);
+}
+
+main section#services .swiper-pagination-bullet-active,
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 30px;
+}
+
+
+/* CONFIGURAÇÃO DA SECÇÃO CONTACT */
+main section#contact {
+    flex-direction: column;
+}
+
+main section#contact a {
+    text-decoration: none;
+    color: white;
+}
+
+main section#contact .social-media {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section#contact .social-media a {
+    transition: 0.2s;
+}
+
+main section#contact .social-media a:hover {
+    transform: translateY(-15%);
+}
+
+main section#contact .others ul {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section#contact .others ul li {
+    list-style: none;
+    font-family: var(--fonte-semibold);
+}
+
+main section#contact .others i {
+    font-size: 1.5em;
 }
