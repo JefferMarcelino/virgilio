@@ -363,3 +363,144 @@ main section#contact .others ul li {
 main section#contact .others i {
     font-size: 1.5em;
 }
+
+@media (max-width: 1050px) {
+    :root {
+        /* FONTS */
+        --tamanho-padrao: 1em;
+        --tamanho-de-paragrafo: 1em;
+        --tamanho-padrao-titulo: 1.5em;
+        --tamanho-titulo-grande: 2em;
+
+    }
+
+    main section {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    main section .textBox {
+        width: 500px;
+        
+    }
+
+    #header img {
+      width: 250px;
+    }
+
+}
+
+@media (max-width: 990px) {
+    main section#about {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 150px;
+    }
+
+    main section#about .imgBox img {
+        width: 250px;
+        margin-bottom: 40px;
+    }
+
+    main section#about .textBox {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 930px) {
+    #header nav {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 890px) {
+    main section#contact {
+        padding-top: 180px;
+    }
+
+    main section#contact .social-media {
+        margin-top: 50px;
+    }
+
+    main section#contact .others {
+        margin-top: 50px;
+    }
+    main section#contact .others ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    #header {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header img {
+        width: 200px;
+    }
+
+    main section#about .imgBox img {
+        width: 175px;
+    }
+
+    main section#home {
+        padding-right: 100px;
+        padding-left: 100px;
+        padding-top: 100px;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    main section#home .textBox {
+        padding: 50px;
+    }
+
+    main section#home h1 span,
+    main section#home .imgBox p {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    main section#home img {
+        width: 150px;
+    }
+
+    main section#contact h1 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .swiper-wrapper {
+        width: 40%;
+        align-items: center;
+    }
+
+    #services .swiper-wrapper img {
+        width: 100%;
+    }
+
+    #services .swiper-wrapper .swiper-slide {
+        opacity: 1;
+    }
+    
+    main section#services {
+        padding-top: 100px;
+    }
+
+    main section#services .swiper-pagination {
+        display: none;
+    }
+
+    main section#contact h1 {
+        font-size: 1em;
+    }
+}

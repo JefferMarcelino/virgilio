@@ -1,12 +1,18 @@
 /* carousel slider swiper */
 const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     loop: true,
     pagination: {
         el: ".swiper-pagination"
     },
     mousewheel: true,
     keyboard: true,
+    breakpoints: {
+        890: {
+            slidesPerView: 3,
+            setWrapperSize: true
+        }
+    }
 });
 
 /* Menu ativo conforme a secção visível na página */
