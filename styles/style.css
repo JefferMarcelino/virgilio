@@ -493,7 +493,7 @@ main section#contact .others i {
     }
     
     main section#services {
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     main section#services .swiper-pagination {
@@ -502,5 +502,9 @@ main section#contact .others i {
 
     main section#contact h1 {
         font-size: 1em;
+    }
+
+    main section#contact .social-media i{
+        font-size: 3em;
     }
 }
