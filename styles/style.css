@@ -364,9 +364,10 @@ main section#contact .others i {
     font-size: 1.5em;
 }
 
+
 @media (max-width: 1050px) {
     :root {
-        /* FONTS */
+        
         --tamanho-padrao: 1em;
         --tamanho-de-paragrafo: 1em;
         --tamanho-padrao-titulo: 1.5em;
@@ -409,6 +410,7 @@ main section#contact .others i {
     }
 }
 
+
 @media (max-width: 930px) {
     #header nav {
         display: none;
@@ -441,38 +443,40 @@ main section#contact .others i {
     #header {
         justify-content: center;
         align-items: center;
+        padding-bottom: 20px;
     }
 
     #header img {
-        width: 200px;
+        width: 250px;
     }
 
-    main section#about .imgBox img {
-        width: 175px;
+    main section#about .imgBox img,
+    main section#home .imgBox img{
+        width: 230px;
     }
 
     main section#home {
-        padding-right: 100px;
-        padding-left: 100px;
-        padding-top: 100px;
+        height: 120vh;
+        margin-top: 80px;
+        padding-top: 0px;
         flex-direction: column;
-        justify-content: start;
     }
 
     main section#home .textBox {
-        padding: 50px;
         width: 100vw;
+        height: 50%;
+        padding: 0px 50px;
+        text-align: justify;
     }
 
-    main section#home h1 span,
-    main section#home .imgBox p {
-        display: none;
-        visibility: hidden;
-        opacity: 0;
+    main section#home .imgBox {
+        position: relative;
+        bottom: -40px;
+        height: 50%;
     }
 
-    main section#home img {
-        width: 150px;
+    main section#home .imgBox {
+        margin-top: -300px;
     }
 
     main section#contact h1 {
